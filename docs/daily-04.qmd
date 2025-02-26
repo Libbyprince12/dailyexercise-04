@@ -1,7 +1,7 @@
 ---
 title: "ESS 330 Actvity 4"
 subtitle: "Meet R, Quarto, & Github"
-author: Mike Johnson
+author: Libby Prince
 date: last-modified
 format:
   html:
@@ -33,6 +33,7 @@ knitr::opts_chunk$set(message = FALSE, warning = FALSE)
 4. From the knit document, right click on the final map image and save it to the `img` directory.
 5. Push your changes back to your repo
 6. Submit the URL to your repo and the saved image to the Canvas Dropbox.
+
 
 ## Data: USA Cites
 
@@ -232,7 +233,7 @@ cities  |>
 
 ```{r}
 #| echo: false
-threshold <- 10000
+threshold <- 100000
 
 big_cities <-  cities |> 
   filter(population > threshold)  |> 
@@ -259,6 +260,10 @@ big_cities  |>
        x="",
        y = "") + 
   theme_bw()
+# Save the plot to the img folder
+ggsave("img/my_plot.png", plot = last_plot())
+
 ```
+
 
 
